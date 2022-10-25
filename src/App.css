@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+
+
+body {
+    background-color: #1a4fb9;
+    color: white;
+    padding: 40px;
+    font-family: 'Josefin Sans', cursive;
+    text-align: center;
+  }
