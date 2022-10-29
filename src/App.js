@@ -1,40 +1,64 @@
-import ToDoList from "./components/ToDoList";
-import { useState } from "react";
+import ToDoForm from "./components/ToDoForm";
+import { useState, useEffect } from "react";
 
-const testList = [
-  {
-    id: 1,
-    title: "Buy food",
-  },
-  {
-    id: 2,
-    title: "Do homework",
-  },
-  {
-    id: 3,
-    title: "Exercise",
-  },
-];
+const App = () => {
+  const [todos, setTodos] = useState([]);
 
-function App() {
-  const [toDoItems, setToDoItems] = useState(testList);
-
-  const removeHandler = (id) => {
-    console.log("Removed task " + id);
-    setToDoItems((prevToDoItems) =>
-      prevToDoItems.filter((item) => {
-        return item.id !== id;
-      })
+  const addTodoHandler = async (todo) => {
+    console.log(todo);
+    const response = await fetch(
+      "https://to-do-list-149ca-default-rtdb.europe-west1.firebasedatabase.app/todos.json",
+      {
+        method: "POST",
+        body: JSON.stringify(todo),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
     );
+    const data = await response.json();
+    console.log(data);
   };
 
-  return (
-    <div>
-      <h1>To Do</h1>
-      <ToDoList toDoList={testList} removeHandler={removeHandler} />
-      <button>Add</button>
+  const fetchTodos = async () => {
+    const response = await fetch(
+      "https://to-do-list-149ca-default-rtdb.europe-west1.firebasedatabase.app/todos.json"
+    );
+    const data = await response.json();
+
+    const fetchedTodos = [];
+
+    for (const key in data) {
+      fetchedTodos.push({
+        id: key,
+        text: data[key].text,
+        date: data[key].date,
+      });
+    }
+
+    setTodos(fetchedTodos);
+  };
+
+  useEffect(() => {
+    fetchTodos();
+  }, [fetchTodos]);
+
+  let content = todos.map((todo) => (
+    <div key={todo.id}>
+      <h2>{todo.text}</h2>
+      <h3>{todo.date}</h3>
+      <br></br>
     </div>
+  ));
+
+  return (
+    <>
+      <section>
+        <ToDoForm onAddTodo={addTodoHandler} />
+      </section>
+      <section>{content}</section>
+    </>
   );
-}
+};
 
 export default App;
