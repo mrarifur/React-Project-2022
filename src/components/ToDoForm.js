@@ -1,7 +1,7 @@
-import { useRef } from "react";
+import { useRef } from 'react';
 
 const ToDoForm = (props) => {
-  const textRef = useRef("");
+  const textRef = useRef('');
   //const dateRef = useRef("");
 
   const submitHandler = (event) => {
@@ -14,15 +14,23 @@ const ToDoForm = (props) => {
 
     props.onAddTodo(todo);
 
-    textRef.current.value = "";
+    textRef.current.value = '';
     //dateRef.current.value = "";
   };
 
   return (
     <div>
       <form onSubmit={submitHandler}>
-        <input type="text" placeholder="Add..." name="text" ref={textRef} />
-        <button>+</button>
+        <input
+          type='text'
+          placeholder='Add...'
+          name='text'
+          ref={textRef}
+          className='inputfeild'
+        />
+        <button className='Button'>
+          <i className='fa fa-plus'></i>
+        </button>
       </form>
     </div>
   );

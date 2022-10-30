@@ -1,18 +1,19 @@
-import ToDoForm from "./components/ToDoForm";
-import { useState, useEffect } from "react";
+import ToDoForm from './components/ToDoForm';
+import { useState, useEffect } from 'react';
+import './App.css';
 
 const App = () => {
   const baseUrl =
-    "https://to-do-list-149ca-default-rtdb.europe-west1.firebasedatabase.app/";
-  const urlEnding = "todos.json";
+    'https://to-do-list-149ca-default-rtdb.europe-west1.firebasedatabase.app/';
+  const urlEnding = 'todos.json';
 
   const [todos, setTodos] = useState([]);
 
   const addTodos = async (todo) => {
     const response = await fetch(baseUrl + urlEnding, {
-      method: "POST",
+      method: 'POST',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(todo),
     });
@@ -40,7 +41,7 @@ const App = () => {
 
   const deleteAllTodos = () => {
     const res = fetch(baseUrl + urlEnding, {
-      method: "DELETE",
+      method: 'DELETE',
     });
   };
 
@@ -49,9 +50,15 @@ const App = () => {
   }, [fetchTodos]);
 
   let content = todos.map((todo) => (
-    <div key={todo.id}>
-      <h2>{todo.text}</h2>
-      <button onClick={() => deleteTodos(todo.id)}>X</button>
+    <div className='Parents' key={todo.id}>
+      <div>
+        <h2 className='content'>{todo.text}</h2>
+      </div>
+      <div>
+        <button className='Button-content' onClick={() => deleteTodos(todo.id)}>
+          X
+        </button>
+      </div>
     </div>
   ));
 
