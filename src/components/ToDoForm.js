@@ -23,7 +23,7 @@ const ToDoForm = (props) => {
       <form onSubmit={submitHandler}>
         <input
           type='text'
-          placeholder='Add...'
+          placeholder='...'
           name='text'
           ref={textRef}
           className='inputfeild'
