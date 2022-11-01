@@ -54,11 +54,7 @@ const App = () => {
       <div>
         <h2 className='content'>{todo.text}</h2>
       </div>
-      <div>
-        <button className='Button-content' onClick={() => deleteTodos(todo.id)}>
-          X
-        </button>
-      </div>
+      <div className='Button-content'></div>
     </div>
   ));
 
@@ -69,7 +65,9 @@ const App = () => {
       </section>
       <section>{content}</section>
       <section>
-        <button onClick={() => deleteAllTodos()}>Remove All</button>
+        <button className='TodoRemove' onClick={() => deleteAllTodos()}>
+          Remove All <i className='fa fa-trash'></i>
+        </button>
       </section>
     </>
   );

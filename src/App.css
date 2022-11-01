@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
-
+@import url('https://fonts.googleapis.com/css2?family=Unna&display=swap');
 body {
   background-image: url('../Images/backgroundimages1.jpg');
   background-size: cover;
@@ -8,7 +7,8 @@ body {
 
   color: white;
   padding: 40px;
-  font-family: 'Josefin Sans', cursive;
+  /*font-family: 'Josefin Sans', cursive;*/
+  font-family: 'Unna', serif;
   text-align: center;
 }
 
@@ -22,6 +22,7 @@ body {
   font-size: 20px;
   padding: 5px;
   border: 2px solid white;
+  color: white;
 }
 .inputfeild::after {
   border-color: rgb(50, 198, 0);
@@ -35,7 +36,7 @@ body {
   margin-right: 10px;
   align-items: center;
   justify-content: center;
-  padding-top: 10px;
+  padding-top: 0px;
 }
 .Button {
   color: black;
@@ -50,11 +51,18 @@ body {
   background-color: rgb(50, 198, 0);
 }
 
-.Parents {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
 .Button-content {
   margin-left: 50px;
+  size: 50px;
+}
+.FTrash {
+  background-color: white;
+  font-size: 30px;
+}
+.TodoRemove {
+  background-image: linear-gradient(white, Aquamarine);
+  padding: 10px;
+  border: 5px;
+  border-radius: 5px;
+  font-size: 15px;
 }
