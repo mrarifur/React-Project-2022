@@ -1,14 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Unna&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Unna&display=swap");
 body {
-  background-image: url('../Images/backgroundimages1.jpg');
+  background-image: url("../Images/backgroundimages1.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  background-color: #001b30;
   height: 100vh;
 
   color: white;
   padding: 40px;
   /*font-family: 'Josefin Sans', cursive;*/
-  font-family: 'Unna', serif;
+  font-family: "Unna", serif;
   text-align: center;
 }
 
