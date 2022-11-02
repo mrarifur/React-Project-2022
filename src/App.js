@@ -30,7 +30,6 @@ const App = () => {
       fetchedTodos.push({
         id: key,
         text: data[key].text,
-        date: data[key].date,
       });
     }
 
