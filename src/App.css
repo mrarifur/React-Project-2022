@@ -1,15 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Unna&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Unna&display=swap');
 body {
-  background-image: url("../Images/backgroundimages1.jpg");
+  background-image: url('../Images/backgroundimages1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-color: #001b30;
   height: 100vh;
-
   color: white;
   padding: 40px;
-  /*font-family: 'Josefin Sans', cursive;*/
-  font-family: "Unna", serif;
+  font-family: 'Josefin Sans', cursive;
   text-align: center;
 }
 
@@ -25,8 +23,8 @@ body {
   border: 2px solid white;
   color: white;
 }
-.inputfeild::after {
-  border-color: rgb(50, 198, 0);
+.inputfeild:focus {
+  background-color: black;
 }
 .content {
   border: 2px solid black;
@@ -39,6 +37,7 @@ body {
   justify-content: center;
   padding-top: 0px;
 }
+
 .Button {
   color: black;
   font-size: 20px;
@@ -48,22 +47,23 @@ body {
   border-color: white;
   border-radius: 5px;
 }
-.Button:focus {
+.Button:hover {
   background-color: rgb(50, 198, 0);
 }
 
-.Button-content {
-  margin-left: 50px;
-  size: 50px;
-}
 .FTrash {
   background-color: white;
-  font-size: 30px;
+  font-size: 59px;
 }
 .TodoRemove {
-  background-image: linear-gradient(white, Aquamarine);
+  background-image: linear-gradient(Aquamarine, #001b30, black);
   padding: 10px;
-  border: 5px;
+  border: 1px solid white;
+  color: white;
   border-radius: 5px;
-  font-size: 15px;
+  font-size: 20px;
+  font-family: 'Josefin Sans', cursive;
+}
+.TodoRemove:hover {
+  background-image: linear-gradient(red, red);
 }
